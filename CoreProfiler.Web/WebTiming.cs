@@ -9,9 +9,9 @@ namespace CoreProfiler.Web
     /// </summary>
     public class WebTiming : Timing
     {
-        private readonly IProfiler _profiler;
         private const string WebTimingType = "web";
         private const string CorrelationIdKey = "correlationId";
+        private readonly IProfiler _profiler;
 
         /// <summary>
         /// Gets the correlationId of a web timing.
@@ -38,7 +38,7 @@ namespace CoreProfiler.Web
             Data[CorrelationIdKey] = Guid.NewGuid().ToString("N");
         }
 
-        #endregion
+        #endregion Constructors
 
         #region Public Methods
 
@@ -52,6 +52,6 @@ namespace CoreProfiler.Web
             _profiler.GetTimingSession().AddTiming(this);
         }
 
-        #endregion
+        #endregion Public Methods
     }
 }
